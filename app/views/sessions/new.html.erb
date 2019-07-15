@@ -1,0 +1,14 @@
+<h1>Login</h1>
+<%= form_tag sessions_path do |form| %>
+    <div class="field">
+        <%= label_tag :email %>
+        <%= email_field_tag :email, 'jemand@example.com', class: "inputfield" %>
+    </div>
+    <div class="field">
+        <%= label_tag :password %>
+        <%= password_field_tag :password, :password, class: "inputfield" %>
+    </div>
+    <div class="actions">
+        <%= submit_tag "Login", class: "btn btn--primary btn--cta" %>
+    </div>
+<% end %>
