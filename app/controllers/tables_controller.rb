@@ -2,6 +2,7 @@ class TablesController < ApplicationController
   before_action :set_table, only: [:show, :edit, :update, :destroy]
   before_action :set_order, only: [:show]
   before_action :authorize
+  before_action :check_authorization, only: [:new, :create, :destroy]
   # GET /tables
   # GET /tables.json
   def index
@@ -27,7 +28,7 @@ class TablesController < ApplicationController
   # POST /tables.json
   def create
     @table = Table.new(table_params)
-
+    current_user.organization.tables << @table
     respond_to do |format|
       if @table.save
         format.html { redirect_to @table, notice: 'Table was successfully created.' }
@@ -88,7 +89,8 @@ class TablesController < ApplicationController
       params.require(:table).permit(:id)
     end
 
+    # Or if there is no specified sum of them... permit all! ^^'
     def orders
-      params.permit(:tisch, :Burger, :Kotelett, :Wurst, :Pommes, :Halbe, :Seiterl, :Gespritzter, :Anti)
+      params.permit!
     end
 end

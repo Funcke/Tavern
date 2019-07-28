@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.boolean :paid
       t.belongs_to :table
       t.belongs_to :product
+      t.belongs_to :organization
       t.timestamps
     end
   end

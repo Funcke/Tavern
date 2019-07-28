@@ -8,5 +8,15 @@ products = Product.create([
     {name: 'Gespritzter', preis: 2.5, food: false},
     {name: 'Anti', preis: 2.5, food: false}
 ])
-
 tables = Table.create({nummer: 1})
+organizations = Organization.create({name: 'Jonas´Test Unternehmen'})
+roles = Role.create({name: 'admin'})
+users = User.create({username: 'Jonas Funcke', email: 'jonas@funcke.work', password_digest: BCrypt::Password.create('Litec123!')})
+level = Level.create({name: 'admin'})
+organizations.users << users
+organizations.roles << roles
+organizations.tables << tables
+organizations.products << products
+roles.users << users
+level.roles << roles
+puts User.all

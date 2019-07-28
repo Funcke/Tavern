@@ -11,26 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :username %>
-    <%= form.text_field :username, class: "inputfield" %>
+    <%= form.text_field :username, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email, class: "inputfield" %>
+    <%= form.text_field :email, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :password %>
-    <%= form.password_field :password, class: "inputfield" %>
+    <%= form.password_field :password, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, class: "inputfield" %>
+    <%= form.password_field :password_confirmation, class: "form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :role %>
+    <%= form.select :role, current_user.organization.roles.collect { |role| [role.name, role.id]}, class: "form-control"%>
+  </div>
   <div class="actions">
     <%= form.submit class: "btn btn--primary btn--cta" %>
   </div>

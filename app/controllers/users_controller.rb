@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authorize, only: [:show, :edit, :update, :destroy, :index]
+  before_action :check_authorization, only: [:new, :create, :destroy]
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.where(organization_id: current_user.organization.id)
   end
 
   # GET /users/1
@@ -25,7 +26,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    current_user.organization.roles.find(params[:user][:role]).users << @user
+    current_user.organization.users << @user
     respond_to do |format|
       if @user.save
         authenticate(@user)

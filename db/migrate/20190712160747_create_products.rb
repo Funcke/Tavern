@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.boolean :food
       t.boolean :drink
+      t.belongs_to :organization
       t.timestamps
     end
   end
