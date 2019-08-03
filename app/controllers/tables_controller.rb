@@ -1,5 +1,5 @@
 class TablesController < ApplicationController
-  before_action :set_table, only: [:show, :edit, :update, :destroy]
+  before_action :set_table, only: [:show, :edit, :update, :destroy, :generate_qr]
   before_action :set_order, only: [:show]
   before_action :authorize
   before_action :check_authorization, only: [:new, :create, :destroy]
@@ -75,10 +75,18 @@ class TablesController < ApplicationController
     end
   end
 
+  def generate_qr
+    if @table
+      respond_to do |format|
+        format.svg { render inline: RQRCode::QRCode.new('http://localhost:3000/tables/' + @table.id.to_s).as_svg}
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_table
-      @table = Table.find(params[:id])
+      @table = Table.where({:id => params[:id], :organization_id => current_user.organization_id}).first
     end
 
     def set_order

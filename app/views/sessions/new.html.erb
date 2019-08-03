@@ -1,14 +1,14 @@
 <h1>Login</h1>
 <%= form_tag sessions_path do |form| %>
-    <div class="field">
+    <div class="form-group">
         <%= label_tag :email %>
-        <%= email_field_tag :email, 'jemand@example.com', class: "inputfield" %>
+        <%= email_field_tag :email, 'jemand@example.com', class: "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
         <%= label_tag :password %>
-        <%= password_field_tag :password, :password, class: "inputfield" %>
+        <%= password_field_tag :password, :password, class: "form-control" %>
     </div>
-    <div class="actions">
-        <%= submit_tag "Login", class: "btn btn--primary btn--cta" %>
+    <div class="form-group">
+        <%= submit_tag "Login", class: "btn btn-primary form-control" %>
     </div>
 <% end %>
