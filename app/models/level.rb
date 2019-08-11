@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Level < ApplicationRecord
-    has_many :roles
+  has_many :roles
 end

@@ -1,24 +1,22 @@
+# frozen_string_literal: true
+
 module SessionsHelper
   def current_user
-    if(session[:user_id])
-      @current_user = User.find(session[:user_id])
-    else
-      @current_user = nil
-    end
+    @current_user = (User.find(session[:user_id]) if session[:user_id])
   end
-  
+
   def authenticated?
     current_user.nil?
   end
 
   def authorize
     if authenticated?
-      redirect_to login_url, notice: "you need to be authenticated for this action!"
+      redirect_to login_url, notice: 'you need to be authenticated for this action!'
     end
   end
 
   def authenticate(user)
-    session[:user_id] =user.id
+    session[:user_id] = user.id
   end
 
   def log_out_user

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Migratino for creating orders table
 class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
