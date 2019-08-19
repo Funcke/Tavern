@@ -9,7 +9,7 @@
                         <li class="list-group-item"><%= link_to u.username, u %></li>
                     <% end %>
                 </ul>
-                <% if is_admin? %><%= link_to 'New User', new_user_url, class: "btn btn-primary card-link" %><% end %>
+                <% if admin? %><%= link_to 'New User', new_user_url, class: "btn btn-primary card-link" %><% end %>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
                     <li class="list-group-item"><%= link_to role.name, role %>: <%= role.users.size %></li>
                 <% end %>
                 </ul>
-                <% if is_admin? %><%= link_to 'Add role', new_role_url, class: "btn btn-primary card-link" %><% end %>
+                <% if admin? %><%= link_to 'Add role', new_role_url, class: "btn btn-primary card-link" %><% end %>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
                         <li class="list-group-item"><%= t.nummer %> <a href="<%= generate_qr_url(t) + '.svg'%>" download>QR Code</a></li>
                     <% end %>
                 </ul>
-                <% if is_admin? %><%= link_to 'New Table', new_table_url, class: "btn btn-primary card-link" %><% end %>
+                <% if admin? %><%= link_to 'New Table', new_table_url, class: "btn btn-primary card-link" %><% end %>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
                         <li class="list-group-item"><strong><%= p.name%></strong> <%= p.preis %></li>
                     <% end %>
                 </ul>
-                <% if is_admin? %><%= link_to 'New Product',  '#', class: "btn btn-primary card-link" %><% end %>
+                <% if admin? %><%= link_to 'New Product',  new_product_url, class: "btn btn-primary card-link" %><% end %>
             </div>
         </div>
     </div>

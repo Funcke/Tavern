@@ -10,7 +10,7 @@ class OrganizationsController < ApplicationController
   def edit; end
 
   def update
-    @organization = current_user.organization
+    @organization = organization
     @organization.name = permit_params
     if @organization.save
       redirect_to @organization, notice: 'updated successfull'
@@ -26,7 +26,7 @@ class OrganizationsController < ApplicationController
   private
 
   def set_organization
-    @organization = current_user.organization
+    @organization = organization
   end
 
   def permit_params

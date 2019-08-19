@@ -29,7 +29,7 @@ class TablesController < ApplicationController
   # POST /tables.json
   def create
     @table = Table.new(table_params)
-    current_user.organization.tables << @table
+    organization.tables << @table
     respond_to do |format|
       if @table.save
         format.html { redirect_to @table, notice: 'Table was successfully created.' }
@@ -82,7 +82,11 @@ class TablesController < ApplicationController
   def generate_qr
     if @table
       respond_to do |format|
-        format.svg { render inline: RQRCode::QRCode.new('http://localhost:3000/tables/' + @table.id.to_s).as_svg }
+        format.svg do
+          render inline: RQRCode::QRCode.new(
+            'http://localhost:3000/tables/' + @table.id.to_s
+          ).as_svg
+        end
       end
     end
   end
@@ -91,14 +95,18 @@ class TablesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_table
-    @table = Table.where(id: params[:id], organization_id: current_user.organization_id).first
+    @table = Table.where(
+      id: params[:id],
+      organization_id: organization.id
+    ).first
   end
 
   def set_order
     @order = Order.new
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def table_params
     params.require(:table).permit(:id)
   end

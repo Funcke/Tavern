@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+ingridients = Ingridient.create([
+  { name: 'white onion', description: 'White sort of onion, from local farmer'},
+  { name: 'red onion', description: 'As we do not have the budget. Y all only gonna get fucking onions'}
+])
+
 products = Product.create([
                             { name: 'Burger', preis: 7.5, food: true },
                             { name: 'Kotelett', preis: 6.5, food: true },
@@ -26,4 +31,3 @@ organizations.tables << tables
 organizations.products << products
 roles.users << users
 level.roles << roles
-puts User.all

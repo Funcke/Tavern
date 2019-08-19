@@ -6,11 +6,11 @@ class RolesController < ApplicationController
 
   def create
     @role = Role.new(role_params)
-    current_user.organization.roles << @role
+    organization.roles << @role
     if @role.save
-      redirect_to current_user.organization, notice: 'Successfully created role: ' + @role.name
+      redirect_to organization, notice: 'Successfully created role: ' + @role.name
     else
-      redirect_to current_user.organization, notice: 'Creating role failed'
+      redirect_to organization, notice: 'Creating role failed'
     end
   end
 

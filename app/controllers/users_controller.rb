@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.where(organization_id: current_user.organization.id)
+    @users = User.where(organization_id: organization.id)
   end
 
   # GET /users/1
@@ -26,12 +26,15 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    current_user.organization.roles.find(params[:user][:role]).users << @user
-    current_user.organization.users << @user
+    organization.roles.find(params[:user][:role]).users << @user
+    organization.users << @user
     respond_to do |format|
       if @user.save
         authenticate(@user)
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html do
+          redirect_to @user,
+                      notice: 'User was successfully created.'
+        end
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -45,7 +48,10 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html do
+          redirect_to @user,
+                      notice: 'User was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -60,7 +66,10 @@ class UsersController < ApplicationController
     log_out_user
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html do
+        redirect_to users_url,
+                    notice: 'User was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
@@ -72,8 +81,14 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(
+      :username,
+      :email,
+      :password,
+      :password_confirmation
+    )
   end
 end

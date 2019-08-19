@@ -33,7 +33,7 @@
 
   <div class="form-group">
     <%= form.label :role %>
-    <%= form.select :role, current_user.organization.roles.collect { |role| [role.name, role.id]}, class: "form-control"%>
+    <%= form.select :role, organization.roles.collect { |role| [role.name, role.id]}, class: "form-control"%>
   </div>
   <div class="actions">
     <%= form.submit class: "btn btn--primary btn--cta" %>

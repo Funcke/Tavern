@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Helper module for sessions
 module SessionsHelper
   def current_user
     @current_user = (User.find(session[:user_id]) if session[:user_id])
@@ -9,11 +10,14 @@ module SessionsHelper
     current_user.nil?
   end
 
+  # rubocop:disable Style/GuardClause
   def authorize
     if authenticated?
-      redirect_to login_url, notice: 'you need to be authenticated for this action!'
+      redirect_to login_url,
+                  notice: 'you need to be authenticated for this action!'
     end
   end
+  # rubocop:enable Style/GuardClause
 
   def authenticate(user)
     session[:user_id] = user.id
