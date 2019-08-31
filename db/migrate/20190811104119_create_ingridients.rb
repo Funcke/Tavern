@@ -6,6 +6,7 @@ class CreateIngridients < ActiveRecord::Migration[5.2]
     create_table :ingridients do |t|
       t.string :name
       t.string :description
+      t.belongs_to :organization
 
       t.timestamps
     end

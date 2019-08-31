@@ -1537,3 +1537,1088 @@ Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
   [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
   [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "uuuuu"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrderGroups (20190811102248)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "order_groups" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "number" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_order_groups_on_organization_id" ON "order_groups" ("organization_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811102248"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngridients (20190811104119)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingridients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104119"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAllergenics (20190811104243)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "allergenics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "token" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104243"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTableIngridientAllergenic (20190811104442)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "allergenics_ingridients" ("ingridient_id" integer NOT NULL, "allergenic_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "ingridient_allergenic" ON "allergenics_ingridients" ("ingridient_id", "allergenic_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "allergenic_ingridient" ON "allergenics_ingridients" ("allergenic_id", "ingridient_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104442"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTableProductAllergenic (20190811104732)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "allergenics_products" ("product_id" integer NOT NULL, "allergenic_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "allergene_product" ON "allergenics_products" ("product_id", "allergenic_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "product_allergene" ON "allergenics_products" ("allergenic_id", "product_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104732"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-08-28 18:20:27.381537"], ["updated_at", "2019-08-28 18:20:27.381537"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (2.2ms)[0m  [1m[31mDELETE FROM "ar_internal_metadata";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ar_internal_metadata';[0m
+  [1m[35m (2.2ms)[0m  [1m[31mDELETE FROM "users";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'users';[0m
+  [1m[35m (2.2ms)[0m  [1m[31mDELETE FROM "tables";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'tables';[0m
+  [1m[35m (2.2ms)[0m  [1m[31mDELETE FROM "products";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'products';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "orders";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'orders';[0m
+  [1m[35m (1.8ms)[0m  [1m[31mDELETE FROM "organizations";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'organizations';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "roles";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'roles';[0m
+  [1m[35m (1.9ms)[0m  [1m[31mDELETE FROM "levels";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'levels';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM "order_groups";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'order_groups';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "ingridients";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ingridients';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM "allergenics";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "allergenics_ingridients";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics_ingridients';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "allergenics_products";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics_products';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "uuuu"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "uuuuu"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (3.6ms)[0m  [1m[31mDELETE FROM "ar_internal_metadata";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ar_internal_metadata';[0m
+  [1m[35m (2.6ms)[0m  [1m[31mDELETE FROM "users";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'users';[0m
+  [1m[35m (4.2ms)[0m  [1m[31mDELETE FROM "tables";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'tables';[0m
+  [1m[35m (2.2ms)[0m  [1m[31mDELETE FROM "products";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'products';[0m
+  [1m[35m (2.2ms)[0m  [1m[31mDELETE FROM "orders";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'orders';[0m
+  [1m[35m (1.9ms)[0m  [1m[31mDELETE FROM "organizations";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'organizations';[0m
+  [1m[35m (4.0ms)[0m  [1m[31mDELETE FROM "roles";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'roles';[0m
+  [1m[35m (3.7ms)[0m  [1m[31mDELETE FROM "levels";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'levels';[0m
+  [1m[35m (4.4ms)[0m  [1m[31mDELETE FROM "order_groups";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'order_groups';[0m
+  [1m[35m (2.3ms)[0m  [1m[31mDELETE FROM "ingridients";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ingridients';[0m
+  [1m[35m (2.3ms)[0m  [1m[31mDELETE FROM "allergenics";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics';[0m
+  [1m[35m (4.8ms)[0m  [1m[31mDELETE FROM "allergenics_ingridients";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics_ingridients';[0m
+  [1m[35m (4.0ms)[0m  [1m[31mDELETE FROM "allergenics_products";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics_products';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20190704142115)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "organization_id" integer, "role_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_organization_id" ON "users" ("organization_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_users_on_role_id" ON "users" ("role_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190704142115"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTables (20190712160635)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nummer" integer, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tables_on_organization_id" ON "tables" ("organization_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190712160635"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProducts (20190712160747)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "price" float, "name" varchar, "food" boolean, "drink" boolean, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_organization_id" ON "products" ("organization_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190712160747"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateOrders (20190712160801)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "paid" boolean, "table_id" integer, "product_id" integer, "order_group_id" integer, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_table_id" ON "orders" ("table_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_order_group_id" ON "orders" ("order_group_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_organization_id" ON "orders" ("organization_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190712160801"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateOrganizations (20190726173505)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "organizations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone" varchar, "mail" varchar, "street" varchar, "town" varchar, "zipcode" varchar, "VAT" varchar, "legal_name" varchar, "logo" varchar, "homepage" varchar, "currency" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190726173505"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRoles (20190726173529)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "roles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "organization_id" integer, "level_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_organization_id" ON "roles" ("organization_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_level_id" ON "roles" ("level_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190726173529"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLevels (20190726173544)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "levels" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190726173544"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateOrderGroups (20190811102248)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "order_groups" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "number" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_order_groups_on_organization_id" ON "order_groups" ("organization_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811102248"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngridients (20190811104119)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ingridients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104119"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAllergenics (20190811104243)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "allergenics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "token" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104243"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTableIngridientAllergenic (20190811104442)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "allergenics_ingridients" ("ingridient_id" integer NOT NULL, "allergenic_id" integer NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "ingridient_allergenic" ON "allergenics_ingridients" ("ingridient_id", "allergenic_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "allergenic_ingridient" ON "allergenics_ingridients" ("allergenic_id", "ingridient_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104442"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTableProductAllergenic (20190811104732)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "allergenics_products" ("product_id" integer NOT NULL, "allergenic_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "allergene_product" ON "allergenics_products" ("product_id", "allergenic_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "product_allergene" ON "allergenics_products" ("allergenic_id", "product_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104732"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-08-31 09:56:33.554794"], ["updated_at", "2019-08-31 09:56:33.554794"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (2.6ms)[0m  [1m[31mDELETE FROM "ar_internal_metadata";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ar_internal_metadata';[0m
+  [1m[35m (1.9ms)[0m  [1m[31mDELETE FROM "users";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'users';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "tables";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'tables';[0m
+  [1m[35m (1.8ms)[0m  [1m[31mDELETE FROM "products";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'products';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM "orders";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'orders';[0m
+  [1m[35m (1.9ms)[0m  [1m[31mDELETE FROM "organizations";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'organizations';[0m
+  [1m[35m (2.4ms)[0m  [1m[31mDELETE FROM "roles";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'roles';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "levels";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.4ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'levels';[0m
+  [1m[35m (2.4ms)[0m  [1m[31mDELETE FROM "order_groups";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'order_groups';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "ingridients";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ingridients';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM "allergenics";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM "allergenics_ingridients";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics_ingridients';[0m
+  [1m[35m (2.4ms)[0m  [1m[31mDELETE FROM "allergenics_products";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics_products';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."phone" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "aaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "aaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "penis"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "ii@c.at"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@a.at"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "aaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "aaaaaa.at"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "aaaaaa@at"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "aaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "no number"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "street 12"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "aaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (2.3ms)[0m  [1m[31mDELETE FROM "ar_internal_metadata";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ar_internal_metadata';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM "users";[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'users';[0m
+  [1m[35m (2.5ms)[0m  [1m[31mDELETE FROM "tables";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'tables';[0m
+  [1m[35m (2.6ms)[0m  [1m[31mDELETE FROM "products";[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'products';[0m
+  [1m[35m (2.6ms)[0m  [1m[31mDELETE FROM "orders";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'orders';[0m
+  [1m[35m (2.3ms)[0m  [1m[31mDELETE FROM "organizations";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'organizations';[0m
+  [1m[35m (2.8ms)[0m  [1m[31mDELETE FROM "roles";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'roles';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "levels";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'levels';[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM "order_groups";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'order_groups';[0m
+  [1m[35m (2.1ms)[0m  [1m[31mDELETE FROM "ingridients";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'ingridients';[0m
+  [1m[35m (2.3ms)[0m  [1m[31mDELETE FROM "allergenics";[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics';[0m
+  [1m[35m (2.4ms)[0m  [1m[31mDELETE FROM "allergenics_ingridients";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics_ingridients';[0m
+  [1m[35m (2.3ms)[0m  [1m[31mDELETE FROM "allergenics_products";[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM sqlite_sequence where name = 'allergenics_products';[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."phone" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "aaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "aaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Create (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 10:05:52.319159"], ["updated_at", "2019-08-31 10:05:52.319159"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "lARRY'S sCHNITZEL hOUSE"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "penis"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Create (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 10:05:52.382577"], ["updated_at", "2019-08-31 10:05:52.382577"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "ii@c.at"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@a.at"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "aaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "aaaaaa.at"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "aaaaaa@at"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Create (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 10:05:52.467853"], ["updated_at", "2019-08-31 10:05:52.467853"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "SOMEBODY@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "aaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Create (0.5ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 10:05:52.521988"], ["updated_at", "2019-08-31 10:05:52.521988"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 dOWNING sTREET"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "no number"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "street 12"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Create (0.9ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 10:05:52.607698"], ["updated_at", "2019-08-31 10:05:52.607698"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "atu99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Create (0.7ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 10:05:52.640161"], ["updated_at", "2019-08-31 10:05:52.640161"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "lARRIARD hANNES"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "aaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" ORDER BY "organizations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrganization Create (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 10:05:52.710041"], ["updated_at", "2019-08-31 10:05:52.710041"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m

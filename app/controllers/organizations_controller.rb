@@ -11,11 +11,11 @@ class OrganizationsController < ApplicationController
 
   def update
     @organization = organization
-    @organization.name = permit_params
+    @organization.update()
     if @organization.save
       redirect_to @organization, notice: 'updated successfull'
     else
-      redirect_to edit_organization_path(@organization), notice: 'somethin went wrong'
+      redirect_to edit_organization_path(@organization), notice: 'something went wrong'
     end
   end
 

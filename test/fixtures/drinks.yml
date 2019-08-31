@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price=money: MyString
+  name=string: MyString
+  quantity=number: MyString
+  quantity_type=string: MyString
+
+two:
+  price=money: MyString
+  name=string: MyString
+  quantity=number: MyString
+  quantity_type=string: MyString

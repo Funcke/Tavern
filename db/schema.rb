@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_11_104732) do
+ActiveRecord::Schema.define(version: 2019_08_31_102341) do
 
   create_table "allergenics", force: :cascade do |t|
     t.string "name"
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "allergenics_dish", id: false, force: :cascade do |t|
+    t.integer "dish_id", null: false
+    t.integer "allergenic_id", null: false
+    t.index ["allergenic_id", nil], name: "dish_allergene"
+    t.index [nil, "allergenic_id"], name: "allergene_dish"
   end
 
   create_table "allergenics_ingridients", id: false, force: :cascade do |t|
@@ -26,77 +33,117 @@ ActiveRecord::Schema.define(version: 2019_08_11_104732) do
     t.index ["ingridient_id", "allergenic_id"], name: "ingridient_allergenic"
   end
 
-  create_table "allergenics_products", id: false, force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "allergenic_id", null: false
-    t.index ["allergenic_id", "product_id"], name: "product_allergene"
-    t.index ["product_id", "allergenic_id"], name: "allergene_product"
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_categories_on_organization_id"
+  end
+
+  create_table "dishes", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.decimal "price"
+    t.integer "organization_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_dishes_on_category_id"
+    t.index ["organization_id"], name: "index_dishes_on_organization_id"
+  end
+
+  create_table "drinks", force: :cascade do |t|
+    t.decimal "price"
+    t.string "name"
+    t.integer "quantity"
+    t.string "quantity_type"
+    t.integer "organization_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_drinks_on_category_id"
+    t.index ["organization_id"], name: "index_drinks_on_organization_id"
   end
 
   create_table "ingridients", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "levels", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "order_groups", force: :cascade do |t|
-    t.string "number"
     t.integer "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_ingridients_on_organization_id"
+  end
+
+  create_table "order_groups", force: :cascade do |t|
+    t.integer "organization_id"
+    t.integer "table_id"
+    t.boolean "open"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_order_groups_on_organization_id"
+    t.index ["table_id"], name: "index_order_groups_on_table_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.boolean "paid"
-    t.integer "table_id"
-    t.integer "product_id"
+    t.integer "dish_id"
+    t.integer "drink_id"
     t.integer "order_group_id"
     t.integer "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dish_id"], name: "index_orders_on_dish_id"
+    t.index ["drink_id"], name: "index_orders_on_drink_id"
     t.index ["order_group_id"], name: "index_orders_on_order_group_id"
     t.index ["organization_id"], name: "index_orders_on_organization_id"
-    t.index ["product_id"], name: "index_orders_on_product_id"
-    t.index ["table_id"], name: "index_orders_on_table_id"
   end
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
+    t.string "phone"
+    t.string "mail"
+    t.string "street"
+    t.string "town"
+    t.string "zipcode"
+    t.string "VAT"
+    t.string "legal_name"
+    t.string "logo"
+    t.string "homepage"
+    t.string "currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.float "price"
-    t.string "name"
-    t.boolean "food"
-    t.boolean "drink"
+  create_table "reservations", force: :cascade do |t|
+    t.date "date"
+    t.boolean "cancelled"
+    t.integer "table_id"
     t.integer "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_products_on_organization_id"
+    t.index ["organization_id"], name: "index_reservations_on_organization_id"
+    t.index ["table_id"], name: "index_reservations_on_table_id"
+  end
+
+  create_table "rights", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.integer "organization_id"
-    t.integer "level_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["level_id"], name: "index_roles_on_level_id"
     t.index ["organization_id"], name: "index_roles_on_organization_id"
   end
 
   create_table "tables", force: :cascade do |t|
-    t.integer "nummer"
+    t.integer "number"
+    t.integer "seats"
+    t.string "description"
     t.integer "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -105,6 +152,9 @@ ActiveRecord::Schema.define(version: 2019_08_11_104732) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "gender"
     t.string "email"
     t.string "password_digest"
     t.integer "organization_id"
