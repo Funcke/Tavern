@@ -3,13 +3,7 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title">Users</h2>
-                <ul class="list-group card-text">
-                    <% @organization.users.each do |u| %>
-                        <li class="list-group-item"><%= link_to u.username, u %></li>
-                    <% end %>
-                </ul>
-                <% if admin? %><%= link_to 'New User', new_user_url, class: "btn btn-primary card-link" %><% end %>
+                <%= render 'users/list', users: @organization.users %>
             </div>
         </div>
     </div>
@@ -34,7 +28,7 @@
                 <h2 class="card-title">Tables</h2>
                 <ul class="list-group card-text">
                     <% @organization.tables.each do |t| %>
-                        <li class="list-group-item"><%= t.nummer %> <a href="<%= generate_qr_url(t) + '.svg'%>" download>QR Code</a></li>
+                        <li class="list-group-item"><%= t.number %> <a href="<%= generate_qr_url(t) + '.svg'%>" download>QR Code</a></li>
                     <% end %>
                 </ul>
                 <% if admin? %><%= link_to 'New Table', new_table_url, class: "btn btn-primary card-link" %><% end %>
@@ -46,8 +40,11 @@
             <div class="card-body" style="overflow: scroll">
                 <h2 class="card-title">Products</h2>
                 <ul class="list-group card-text">
-                    <% @organization.products.each do |p|%>
-                        <li class="list-group-item"><strong><%= p.name%></strong> <%= p.preis %></li>
+                    <% @organization.drinks.each do |p|%>
+                        <li class="list-group-item"><strong><%= p.name%></strong> <%= p.preis %><span class="badge badge-pill badge-danger">Drink</span></li>
+                    <% end %>
+                    <% @organization.dishes.each do |p| %>
+                        <li class="list-group-item">D<strong><%= p.name%></strong> <%= p.preis %><span class="badge badge-pill badge-warning">Food</span></li>
                     <% end %>
                 </ul>
                 <% if admin? %><%= link_to 'New Product',  new_product_url, class: "btn btn-primary card-link" %><% end %>

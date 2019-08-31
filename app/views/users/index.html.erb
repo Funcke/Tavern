@@ -1,0 +1,5 @@
+<h1>All User of <%= current_user.organization.name %></h1>
+
+<%= render 'list', users: @users %>
+
+<%= link_to 'Back', :back %>

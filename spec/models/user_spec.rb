@@ -4,14 +4,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
   let(:user) do
-    organization = Organization.new(name: 'Company used by testing')
-    role = Role.new(name: 'admin')
-    organization.roles << role
-    user = User.new(username: 'Test User', email: 'somebody@example.com',
-                    password: 'Litec123', password_confirmation: 'Litec123')
-    role.users << user
-    organization.users << user
-    user
+    
   end
 
   it 'is valid' do

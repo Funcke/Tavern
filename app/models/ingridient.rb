@@ -10,7 +10,7 @@ class Ingridient < ApplicationRecord
   has_and_belongs_to_many :produtcs
   belongs_to :organization
 
-  valdiates :name, presence: true, length: {
+  validates :name, presence: true, length: {
     minimum: 2,
     maximum: 50
   }

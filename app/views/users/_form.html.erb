@@ -17,6 +17,21 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :lastname %>
+    <%= form.label :lastname, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :gender %>
+    <%= form.select :gender, [['male', 'male'], ['female', 'female']], class: "form-control"%>
+  </div>
+
+  <div class="form-group">
     <%= form.label :email %>
     <%= form.text_field :email, class: "form-control" %>
   </div>

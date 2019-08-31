@@ -1,6 +1,6 @@
-# CashApp
+# Tavern
 
-CashApp is a web-based management tool for catering at events.
+Tavern is a web-based management tool for catering at events.
 
 ## Products & Tables
 As an event often provides tables for its guests, orders taken there are categorized by table to ensure a fast and flexible delivery of the desided products.
@@ -16,4 +16,4 @@ To create an order, the waiter/waitress scand the QR-Code at the table to access
 When the personell arrives with the ordered goods, they can confirm the payment of one or more goods with a press on the corresponding pay button.
 
 ## Requirements
-CashApp is written on rails, therefore for an On-Prem installation, a functioning Ruby installation 2.5 or newer is needed. To make the required gems work, it is also recommended to provide a funcitoning build environment. The app itself uses SQLite3 as a database but can easily be configured to work with any other database system, Active Record is compatible with. To ensure the proper functionality, a SSL certificate is necessary, because the Instascan library needs one to access the camera of the device.
+Tavern is written on rails, therefore for an On-Prem installation, a functioning Ruby installation 2.5 or newer is needed. To make the required gems work, it is also recommended to provide a funcitoning build environment. The app itself uses SQLite3 as a database but can easily be configured to work with any other database system, Active Record is compatible with. To ensure the proper functionality, a SSL certificate is necessary, because the Instascan library needs one to access the camera of the device.

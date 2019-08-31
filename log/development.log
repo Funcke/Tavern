@@ -39182,3 +39182,1864 @@ Migrating to CreateCategories (20190831102341)
   ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+Started GET "/" for ::1 at 2019-08-31 12:53:52 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+Redirected to http://localhost:3000/home
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2019-08-31 12:53:52 +0200
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 629ms (Views: 627.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organization/1" for ::1 at 2019-08-31 12:54:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/organization/1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/organization" for ::1 at 2019-08-31 12:54:24 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/organization"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/organizations" for ::1 at 2019-08-31 12:57:26 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/organizations"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/organizations/1" for ::1 at 2019-08-31 12:57:30 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-31 12:57:30 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 102ms (Views: 99.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Jonas´Test Unternehmen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."phone" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRight Create (2.1ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 14:44:56.177674"], ["updated_at", "2019-08-31 14:44:56.177674"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Jonas´Test Unternehmen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."phone" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mRight Create (0.5ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 14:45:21.313627"], ["updated_at", "2019-08-31 14:45:21.313627"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+Started GET "/" for ::1 at 2019-08-31 16:49:47 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#index as HTML
+Redirected to http://localhost:3000/home
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2019-08-31 16:49:47 +0200
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 655ms (Views: 651.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organizations/1" for ::1 at 2019-08-31 16:49:58 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-08-31 16:49:58 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 70ms (Views: 67.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-08-31 16:50:10 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JS4VsqC+WSXZlvO+DTAIMsWdhBqF/iSM51r8Q+vW4I5S6g6BI+pWNpwp/r8LHlNYDkPQ2CUc7qQTfu9PUQkolA==", "email"=>"jonas@funcke.work", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 27ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-08-31 16:50:10 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-08-31 16:50:23 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9j2jtDRJ/9/452IbH/HlFGkKnz+RKvfQj2zOU5b4+giB+biHtx3wzL1YbxoZ375+otTL/THIPfh7SN1fLCcyEg==", "email"=>"jonas@funcke.work", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-08-31 16:50:23 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 76ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-08-31 16:51:48 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gEx0NYRRyG5hQb3bRrGyEbTbGccHg2phP0GfygtYKdj3iG8GBwXHfST+sNpAn+l7fwVNBadhoEnLZYzGsYfhwg==", "email"=>"jonas@funcke.work", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-08-31 16:51:48 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-08-31 16:52:43 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KsX0+Jbgo5uMD1kv1EBZRg9rLD8yaEZHJuo597jE0bBdAe/LFbSsiMmwVC7SbgIsxLV4/ZKKjG/Szir7AhsZqg==", "email"=>"jonas@funcke.work", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 18ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-08-31 16:52:44 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 103ms (Views: 102.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Jonas´Test Unternehmen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "test@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "Downing Street 12"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "6969"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Jonas Funcke Food Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.6ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 14:58:21.109401"], ["updated_at", "2019-08-31 14:58:21.109401"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Jonas´Test Unternehmen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "test@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "Downing Street 12"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "6969"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Jonas Funcke Food Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.6ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 14:58:46.492859"], ["updated_at", "2019-08-31 14:58:46.492859"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+Started POST "/sessions" for ::1 at 2019-08-31 16:59:03 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4GWg8bAXqR9RsJxFEXNbkiH/aw4KAnO9ttvs83VpwIOXobvCM0OmDBQPkUQXXQD46iE/zKrguZVC////z7YImQ==", "email"=>"jonas@funcke.work", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-08-31 16:59:03 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 393ms (Views: 390.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Jonas´Test Unternehmen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "test@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "Downing Street 12"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "6969"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Jonas Funcke Food Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.6ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 14:59:58.660677"], ["updated_at", "2019-08-31 14:59:58.660677"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Jonas´Test Unternehmen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "test@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "Downing Street 12"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "6969"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Jonas Funcke Food Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.6ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:00:30.638512"], ["updated_at", "2019-08-31 15:00:30.638512"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Jonas´Test Unternehmen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "test@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "Downing Street 12"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "6969"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Jonas Funcke Food Inc."], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.5ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:01:36.584330"], ["updated_at", "2019-08-31 15:01:36.584330"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Create (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 15:03:54.178707"], ["updated_at", "2019-08-31 15:03:54.178707"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.9ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:03:54.514783"], ["updated_at", "2019-08-31 15:03:54.514783"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.8ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:04:04.547757"], ["updated_at", "2019-08-31 15:04:04.547757"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.5ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:04:17.738361"], ["updated_at", "2019-08-31 15:04:17.738361"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.5ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:04:54.362054"], ["updated_at", "2019-08-31 15:04:54.362054"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.4ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:06:37.685740"], ["updated_at", "2019-08-31 15:06:37.685740"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+Started POST "/sessions" for ::1 at 2019-08-31 17:07:01 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w9gDOiqHJl2DInjTyGhWmdds3zfLwr95em5bW62ckey0HBgJqdMpTsadddLORg3zHLKL9WsgdVGOSkhXF0NZ9g==", "email"=>"jonas@funcke.work", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 19ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-08-31 17:07:01 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 418ms (Views: 415.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.7ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:08:24.690823"], ["updated_at", "2019-08-31 15:08:24.690823"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.5ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:09:42.747546"], ["updated_at", "2019-08-31 15:09:42.747546"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.4ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:10:11.429338"], ["updated_at", "2019-08-31 15:10:11.429338"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.4ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:10:28.488816"], ["updated_at", "2019-08-31 15:10:28.488816"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.4ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:10:50.723078"], ["updated_at", "2019-08-31 15:10:50.723078"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.5ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:11:19.599850"], ["updated_at", "2019-08-31 15:11:19.599850"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190704142115)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "firstname" varchar, "lastname" varchar, "gender" varchar, "email" varchar, "password_digest" varchar, "organization_id" integer, "role_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190704142115_create_users.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_organization_id" ON "users" ("organization_id")[0m
+  ↳ db/migrate/20190704142115_create_users.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_users_on_role_id" ON "users" ("role_id")[0m
+  ↳ db/migrate/20190704142115_create_users.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190704142115"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTables (20190712160635)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "tables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "seats" integer, "description" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190712160635_create_tables.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_tables_on_organization_id" ON "tables" ("organization_id")[0m
+  ↳ db/migrate/20190712160635_create_tables.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190712160635"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateOrders (20190712160801)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "paid" boolean, "dish_id" integer, "drink_id" integer, "order_group_id" integer, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190712160801_create_orders.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_dish_id" ON "orders" ("dish_id")[0m
+  ↳ db/migrate/20190712160801_create_orders.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_drink_id" ON "orders" ("drink_id")[0m
+  ↳ db/migrate/20190712160801_create_orders.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_order_group_id" ON "orders" ("order_group_id")[0m
+  ↳ db/migrate/20190712160801_create_orders.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_organization_id" ON "orders" ("organization_id")[0m
+  ↳ db/migrate/20190712160801_create_orders.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190712160801"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateOrganizations (20190726173505)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "organizations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone" varchar, "mail" varchar, "street" varchar, "town" varchar, "zipcode" varchar, "VAT" varchar, "legal_name" varchar, "logo" varchar, "homepage" varchar, "currency" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190726173505_create_organizations.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190726173505"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRoles (20190726173529)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "roles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190726173529_create_roles.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_roles_on_organization_id" ON "roles" ("organization_id")[0m
+  ↳ db/migrate/20190726173529_create_roles.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190726173529"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateOrderGroups (20190811102248)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "order_groups" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "organization_id" integer, "table_id" integer, "open" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190811102248_create_order_groups.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_order_groups_on_organization_id" ON "order_groups" ("organization_id")[0m
+  ↳ db/migrate/20190811102248_create_order_groups.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_order_groups_on_table_id" ON "order_groups" ("table_id")[0m
+  ↳ db/migrate/20190811102248_create_order_groups.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811102248"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateIngridients (20190811104119)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ingridients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190811104119_create_ingridients.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_ingridients_on_organization_id" ON "ingridients" ("organization_id")[0m
+  ↳ db/migrate/20190811104119_create_ingridients.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104119"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateAllergenics (20190811104243)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "allergenics" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "token" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190811104243_create_allergenics.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104243"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateJoinTableIngridientAllergenic (20190811104442)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "allergenics_ingridients" ("ingridient_id" integer NOT NULL, "allergenic_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190811104442_create_join_table_ingridient_allergenic.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "ingridient_allergenic" ON "allergenics_ingridients" ("ingridient_id", "allergenic_id")[0m
+  ↳ db/migrate/20190811104442_create_join_table_ingridient_allergenic.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "allergenic_ingridient" ON "allergenics_ingridients" ("allergenic_id", "ingridient_id")[0m
+  ↳ db/migrate/20190811104442_create_join_table_ingridient_allergenic.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104442"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateJoinTableProductAllergenic (20190811104732)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "allergenics_dish" ("dish_id" integer NOT NULL, "allergenic_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190811104732_create_join_table_product_allergenic.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "allergene_dish" ON "allergenics_dish" ("product_id", "allergenic_id")[0m
+  ↳ db/migrate/20190811104732_create_join_table_product_allergenic.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "dish_allergene" ON "allergenics_dish" ("allergenic_id", "product_id")[0m
+  ↳ db/migrate/20190811104732_create_join_table_product_allergenic.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190811104732"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateDrinks (20190831100832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "price" decimal, "name" varchar, "quantity" integer, "quantity_type" varchar, "organization_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190831100832_create_drinks.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_drinks_on_organization_id" ON "drinks" ("organization_id")[0m
+  ↳ db/migrate/20190831100832_create_drinks.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_drinks_on_category_id" ON "drinks" ("category_id")[0m
+  ↳ db/migrate/20190831100832_create_drinks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190831100832"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateDishes (20190831100917)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "dishes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "price" decimal, "organization_id" integer, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190831100917_create_dishes.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_dishes_on_organization_id" ON "dishes" ("organization_id")[0m
+  ↳ db/migrate/20190831100917_create_dishes.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_dishes_on_category_id" ON "dishes" ("category_id")[0m
+  ↳ db/migrate/20190831100917_create_dishes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190831100917"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRights (20190831101859)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "rights" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190831101859_create_rights.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190831101859"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateReservations (20190831102048)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "cancelled" boolean, "table_id" integer, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190831102048_create_reservations.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_reservations_on_table_id" ON "reservations" ("table_id")[0m
+  ↳ db/migrate/20190831102048_create_reservations.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_reservations_on_organization_id" ON "reservations" ("organization_id")[0m
+  ↳ db/migrate/20190831102048_create_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190831102048"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateCategories (20190831102341)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "organization_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190831102341_create_categories.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_categories_on_organization_id" ON "categories" ("organization_id")[0m
+  ↳ db/migrate/20190831102341_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190831102341"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-31 15:11:39.800888"], ["updated_at", "2019-08-31 15:11:39.800888"]]
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."name" = ? LIMIT ?[0m  [["name", "Larry's Schnitzel House"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE LOWER("organizations"."phone") = LOWER(?) LIMIT ?[0m  [["phone", "+436506300112"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."mail" = ? LIMIT ?[0m  [["mail", "somebody@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."street" = ? LIMIT ?[0m  [["street", "12 Downing Street"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."VAT" = ? LIMIT ?[0m  [["VAT", "ATU99999999"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."legal_name" = ? LIMIT ?[0m  [["legal_name", "Larriard Hannes"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizations" WHERE "organizations"."homepage" = ? LIMIT ?[0m  [["homepage", "example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:8
+  [1m[36mOrganization Create (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("name", "phone", "mail", "street", "town", "zipcode", "VAT", "legal_name", "homepage", "currency", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Larry's Schnitzel House"], ["phone", "+436506300112"], ["mail", "somebody@example.com"], ["street", "12 Downing Street"], ["town", "London"], ["zipcode", "4210"], ["VAT", "ATU99999999"], ["legal_name", "Larriard Hannes"], ["homepage", "example.com"], ["currency", "EUR"], ["created_at", "2019-08-31 15:11:46.099161"], ["updated_at", "2019-08-31 15:11:46.099161"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mRight Create (0.5ms)[0m  [1m[32mINSERT INTO "rights" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "admin"], ["created_at", "2019-08-31 15:11:46.492075"], ["updated_at", "2019-08-31 15:11:46.492075"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mIngridient Create (0.6ms)[0m  [1m[32mINSERT INTO "ingridients" ("name", "description", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "white onion"], ["description", "White sort of onion, from local farmer"], ["organization_id", 1], ["created_at", "2019-08-31 15:11:46.510389"], ["updated_at", "2019-08-31 15:11:46.510389"]]
+  ↳ db/seeds.rb:35
+  [1m[36mIngridient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingridients" ("name", "description", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "red onion"], ["description", "As we do not have the budget. Y all only gonna get fucking onions"], ["organization_id", 1], ["created_at", "2019-08-31 15:11:46.512977"], ["updated_at", "2019-08-31 15:11:46.512977"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mRole Create (0.5ms)[0m  [1m[32mINSERT INTO "roles" ("name", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "admin"], ["organization_id", 1], ["created_at", "2019-08-31 15:11:46.519129"], ["updated_at", "2019-08-31 15:11:46.519129"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mTable Create (0.5ms)[0m  [1m[32mINSERT INTO "tables" ("number", "seats", "description", "organization_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["number", 1], ["seats", 3], ["description", "neat table for three, have fun"], ["organization_id", 1], ["created_at", "2019-08-31 15:11:46.526144"], ["updated_at", "2019-08-31 15:11:46.526144"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jonas Funcke"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "firstname", "lastname", "gender", "email", "password_digest", "organization_id", "role_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Jonas Funcke"], ["firstname", "Jonas"], ["lastname", "Funcke"], ["gender", "male"], ["email", "jonas@funcke.work"], ["password_digest", "$2a$12$ayJYRX.MhUs079xAg4nJ5OaD70JqmDhVcaVn2h244Ho0D8L45vKEu"], ["organization_id", 1], ["role_id", 1], ["created_at", "2019-08-31 15:11:46.534936"], ["updated_at", "2019-08-31 15:11:46.534936"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:38
+Started POST "/sessions" for ::1 at 2019-08-31 17:12:06 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jonasfuncke/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mX3hl13bdcUOo8obwA2AM4ueERCjQm1L52nr1o3p11juufqk3o961kscxxrGI9tZQEBF0gOgp2MTTfjaNzYfQg==", "email"=>"jonas@funcke.work", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 311ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/sessions/new" for ::1 at 2019-08-31 17:12:06 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 414ms (Views: 412.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-08-31 17:12:17 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlBJovzpy2OB8zkBwzYTmWm3JJCA4ytiXpKf9k+PJCtZlFKRf73EcMRMNADFGEjzomlwUiAB4Uqqtoz69VDsMQ==", "email"=>"jonas@funcke.work", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jonas@funcke.work"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8
+Redirected to http://localhost:3000/
+Completed 302 Found in 292ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-08-31 17:12:18 +0200
+Processing by ApplicationController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+Redirected to http://localhost:3000/tables
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/tables" for ::1 at 2019-08-31 17:12:18 +0200
+Processing by TablesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  Rendering tables/index.html.erb within layouts/application
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  ↳ app/views/tables/index.html.erb:12
+  Rendered tables/index.html.erb within layouts/application (11.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+Completed 200 OK in 70ms (Views: 60.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/organizations/1" for ::1 at 2019-08-31 17:12:27 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:17
+  Rendering organizations/show.html.erb within layouts/application
+  Rendered organizations/show.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `users' for nil:NilClass):
+    3:     <div class="col">
+    4:         <div class="card">
+    5:             <div class="card-body">
+    6:                 <%= render 'users/list', users: @orgnaization.users %>
+    7:             </div>
+    8:         </div>
+    9:     </div>
+  
+app/views/organizations/show.html.erb:6:in `_app_views_organizations_show_html_erb__2681878682228577905_70132854724300'
+Started GET "/organizations/1" for ::1 at 2019-08-31 17:13:50 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:17
+  Rendering organizations/show.html.erb within layouts/application
+  Rendered organizations/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `users' for nil:NilClass):
+    3:     <div class="col">
+    4:         <div class="card">
+    5:             <div class="card-body">
+    6:                 <%= render 'users/_list', users: @orgnaization.users %>
+    7:             </div>
+    8:         </div>
+    9:     </div>
+  
+app/views/organizations/show.html.erb:6:in `_app_views_organizations_show_html_erb__2681878682228577905_70132898521020'
+Started PUT "/__web_console/repl_sessions/3ec4708399887f5d95efcb5b03543bb9" for ::1 at 2019-08-31 17:14:01 +0200
+Started PUT "/__web_console/repl_sessions/3ec4708399887f5d95efcb5b03543bb9" for ::1 at 2019-08-31 17:14:05 +0200
+Started PUT "/__web_console/repl_sessions/3ec4708399887f5d95efcb5b03543bb9" for ::1 at 2019-08-31 17:14:11 +0200
+Started PUT "/__web_console/repl_sessions/3ec4708399887f5d95efcb5b03543bb9" for ::1 at 2019-08-31 17:14:22 +0200
+  Rendered users/_list.html.erb (225.2ms)
+Started GET "/organizations/1" for ::1 at 2019-08-31 17:15:38 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:17
+  Rendering organizations/show.html.erb within layouts/application
+  Rendered organizations/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/Users/jonasfuncke/Documents/GitHub/CashAppRails/app/views/organizations/show.html.erb:6: syntax error, unexpected ':', expecting ')'
+...( render 'users/_list', @users: @orgnaization.users );@outpu...
+...                              ^):
+  
+app/views/organizations/show.html.erb:6: syntax error, unexpected ':', expecting ')'
+Started GET "/organizations/1" for ::1 at 2019-08-31 17:15:52 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:17
+  Rendering organizations/show.html.erb within layouts/application
+  Rendered organizations/show.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `users' for nil:NilClass):
+    3:     <div class="col">
+    4:         <div class="card">
+    5:             <div class="card-body">
+    6:                 <%= render 'users/_list', users: @orgnaization.users %>
+    7:             </div>
+    8:         </div>
+    9:     </div>
+  
+app/views/organizations/show.html.erb:6:in `_app_views_organizations_show_html_erb__2681878682228577905_70132891200060'
+Started GET "/organizations/1" for ::1 at 2019-08-31 17:16:08 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:17
+  Rendering organizations/show.html.erb within layouts/application
+  Rendered organizations/show.html.erb within layouts/application (20.8ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial users/__list with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jonasfuncke/Documents/GitHub/CashAppRails/app/views"
+):
+    3:     <div class="col">
+    4:         <div class="card">
+    5:             <div class="card-body">
+    6:                 <%= render 'users/_list', users: @organization.users %>
+    7:             </div>
+    8:         </div>
+    9:     </div>
+  
+app/views/organizations/show.html.erb:6:in `_app_views_organizations_show_html_erb__2681878682228577905_70132892058120'
+Started GET "/organizations/1" for ::1 at 2019-08-31 17:16:26 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:17
+  Rendering organizations/show.html.erb within layouts/application
+  Rendered users/_list.html.erb (2.3ms)
+  Rendered organizations/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <ul class="list-group card-text">
+    2:     <li class="list-group-item list-group-item-active active"><h3>Users</h3></li>
+    3:     <% @users.each do |u| %>
+    4:         <li class="list-group-item"><%= link_to u.username, u %></li>
+    5:     <% end %>
+    6: </ul>
+  
+app/views/users/_list.html.erb:3:in `_app_views_users__list_html_erb___3776667993578939850_70132888635780'
+app/views/organizations/show.html.erb:6:in `_app_views_organizations_show_html_erb__2681878682228577905_70132888586440'
+Started GET "/organizations/1" for ::1 at 2019-08-31 17:16:35 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:17
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."organization_id" = ?[0m  [["organization_id", 1]]
+  ↳ app/views/users/_list.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  Rendered users/_list.html.erb (4.0ms)
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."organization_id" = ?[0m  [["organization_id", 1]]
+  ↳ app/views/organizations/show.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."role_id" = ?[0m  [["role_id", 1]]
+  ↳ app/views/organizations/show.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT "tables".* FROM "tables" WHERE "tables"."organization_id" = ?[0m  [["organization_id", 1]]
+  ↳ app/views/organizations/show.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  Rendered organizations/show.html.erb within layouts/application (50.0ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `products' for #<Organization:0x00007f922c52bcf8>):
+    40:             <div class="card-body" style="overflow: scroll">
+    41:                 <h2 class="card-title">Products</h2>
+    42:                 <ul class="list-group card-text">
+    43:                     <% @organization.products.each do |p|%>
+    44:                         <li class="list-group-item"><strong><%= p.name%></strong> <%= p.preis %></li>
+    45:                     <% end %>
+    46:                 </ul>
+  
+app/views/organizations/show.html.erb:43:in `_app_views_organizations_show_html_erb__2681878682228577905_70132892783960'
+Started GET "/organizations/1" for ::1 at 2019-08-31 17:19:14 +0200
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:17
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."organization_id" = ?[0m  [["organization_id", 1]]
+  ↳ app/views/users/_list.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  Rendered users/_list.html.erb (5.5ms)
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."organization_id" = ?[0m  [["organization_id", 1]]
+  ↳ app/views/organizations/show.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."role_id" = ?[0m  [["role_id", 1]]
+  ↳ app/views/organizations/show.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT "tables".* FROM "tables" WHERE "tables"."organization_id" = ?[0m  [["organization_id", 1]]
+  ↳ app/views/organizations/show.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  [1m[36mDrink Load (0.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."organization_id" = ?[0m  [["organization_id", 1]]
+  ↳ app/views/organizations/show.html.erb:43
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT "dishes".* FROM "dishes" WHERE "dishes"."organization_id" = ?[0m  [["organization_id", 1]]
+  ↳ app/views/organizations/show.html.erb:46
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/organizations_helper.rb:6
+  Rendered organizations/show.html.erb within layouts/application (53.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6
+Completed 200 OK in 110ms (Views: 98.2ms | ActiveRecord: 3.6ms)
+
+

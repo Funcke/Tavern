@@ -24,7 +24,7 @@ class User < ApplicationRecord
     maximum: 70
   }
   validates :gender, presence: true, format: {
-    with: /{male}|{female}/
+    with: /(male|female)/
   }
   validates :password_digest, presence: true
   validates :email, presence: true, uniqueness: true, length: {

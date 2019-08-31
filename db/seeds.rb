@@ -4,30 +4,40 @@ ingridients = Ingridient.create([
   { name: 'white onion', description: 'White sort of onion, from local farmer'},
   { name: 'red onion', description: 'As we do not have the budget. Y all only gonna get fucking onions'}
 ])
-
-products = Product.create([
-                            { name: 'Burger', preis: 7.5, food: true },
-                            { name: 'Kotelett', preis: 6.5, food: true },
-                            { name: 'Wurst', preis: 4.5, food: true },
-                            { name: 'Pommes', preis: 2.5, food: true },
-                            { name: 'Halbe', preis: 3.5, food: false },
-                            { name: 'Seiterl', preis: 3, food: false },
-                            { name: 'Gespritzter', preis: 2.5, food: false },
-                            { name: 'Anti', preis: 2.5, food: false }
-                          ])
-tables = Table.create(nummer: 1)
-organizations = Organization.create(name: 'Jonas´Test Unternehmen')
+tables = Table.create(number: 1, seats: 3, description: 'neat table for three, have fun')
+organizations = Organization.create(
+  name: "Larry's Schnitzel House",
+  phone: '+436506300112',
+  mail: 'somebody@example.com',
+  street: '12 Downing Street',
+  town: 'London',
+  zipcode: '4210',
+  VAT: 'ATU99999999',
+  legal_name: 'Larriard Hannes',
+  homepage: 'example.com',
+  currency: 'EUR'
+)
 roles = Role.create(name: 'admin')
 users = User.create(
   username: 'Jonas Funcke',
   email: 'jonas@funcke.work',
+  firstname: 'Jonas',
+  lastname: 'Funcke',
+  gender: 'male',
   password_digest: BCrypt::Password.create('Litec123!')
 )
-level = Level.create(name: 'admin')
+
+rights = Right.create({
+  name: 'admin'
+})
 
 organizations.users << users
+organizations.ingridients << ingridients
 organizations.roles << roles
 organizations.tables << tables
-organizations.products << products
 roles.users << users
-level.roles << roles
+puts users.errors.messages
+puts ingridients.each {|i| puts i.errors.messages}
+puts organizations.errors.messages
+puts roles.errors.messages
+puts tables.errors.messages

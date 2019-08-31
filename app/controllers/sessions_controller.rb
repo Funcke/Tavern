@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_url, notice: 'logged in!'
     else
-      redirect_to new_session_path
+      redirect_to new_session_path, notice: user.nil? ? 'User not found' : 'Password not correct!'
     end
   end
 
