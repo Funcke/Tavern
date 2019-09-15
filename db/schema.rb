@@ -75,27 +75,27 @@ ActiveRecord::Schema.define(version: 2019_08_31_102341) do
     t.index ["organization_id"], name: "index_ingridients_on_organization_id"
   end
 
-  create_table "order_groups", force: :cascade do |t|
+  create_table "order_sessions", force: :cascade do |t|
     t.integer "organization_id"
     t.integer "table_id"
     t.boolean "open"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_order_groups_on_organization_id"
-    t.index ["table_id"], name: "index_order_groups_on_table_id"
+    t.index ["organization_id"], name: "index_order_sessions_on_organization_id"
+    t.index ["table_id"], name: "index_order_sessions_on_table_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.boolean "paid"
     t.integer "dish_id"
     t.integer "drink_id"
-    t.integer "order_group_id"
+    t.integer "order_sessions_id"
     t.integer "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dish_id"], name: "index_orders_on_dish_id"
     t.index ["drink_id"], name: "index_orders_on_drink_id"
-    t.index ["order_group_id"], name: "index_orders_on_order_group_id"
+    t.index ["order_sessions_id"], name: "index_orders_on_order_sessions_id"
     t.index ["organization_id"], name: "index_orders_on_organization_id"
   end
 

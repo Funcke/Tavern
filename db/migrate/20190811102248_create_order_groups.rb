@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-# Migration for creating OrderGroups model
-class CreateOrderGroups < ActiveRecord::Migration[5.2]
+# Migration for creating OrderSession model
+class CreateOrderSessions < ActiveRecord::Migration[5.2]
   def change
-    create_table :order_groups do |t|
+    create_table :order_sessions do |t|
       t.belongs_to :organization
       t.belongs_to :table
       t.boolean :open

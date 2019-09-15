@@ -25,13 +25,7 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title">Tables</h2>
-                <ul class="list-group card-text">
-                    <% @organization.tables.each do |t| %>
-                        <li class="list-group-item"><%= t.number %> <a href="<%= generate_qr_url(t) + '.svg'%>" download>QR Code</a></li>
-                    <% end %>
-                </ul>
-                <% if admin? %><%= link_to 'New Table', new_table_url, class: "btn btn-primary card-link" %><% end %>
+                <%= render 'tables/list', tables: @organization.tables %>
             </div>
         </div>
     </div>

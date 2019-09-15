@@ -1,0 +1,23 @@
+<%= form_with(url: url, model: order_session, local: true) do |form| %>
+<ul class="list-group">
+    <% @food.order(:category_id).each do |p| %>
+    <li class="list-group-item">
+    <div class="form-group">
+        <h3><%= p.name %></h3>
+        <%= form.number_field p.name, value: 0, class: "form-control"%>
+    </div>
+    </li>
+    <% end %>
+</ul>
+<ul class="list-group">
+    <% @drinks.order(:category_id).each do |d| %>
+    <li class="list-group-item">
+        <div class="form-group">
+            <h3><%= d.name %></h3>
+            <%= form.number_field d.name, value: 0, class: "form-control"%>
+        </div>
+    </li>
+    <% end %>
+</ul>
+<%= form.submit class: "btn btn-primary form-control" %>
+<% end %>

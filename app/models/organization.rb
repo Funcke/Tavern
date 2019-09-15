@@ -6,7 +6,7 @@ class Organization < ApplicationRecord
   has_many :dishes
   has_many :tables
   has_many :orders
-  has_many :order_groups
+  has_many :order_sessions
   has_many :ingridients
   has_many :roles
   

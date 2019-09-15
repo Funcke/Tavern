@@ -8,7 +8,7 @@ class TablesController < ApplicationController
   # GET /tables
   # GET /tables.json
   def index
-    @tables = Table.all
+    @tables = Table.where(organization_id: organization.id)
   end
 
   # GET /tables/1
@@ -22,16 +22,15 @@ class TablesController < ApplicationController
 
   # GET /tables/1/edit
   def edit
-    @products = Product.all
+    @food = organization.dishes
+    @drinks = organization.drinks
   end
 
   # POST /tables
   # POST /tables.json
   def create
-    @table = Table.new(table_params)
-    organization.tables << @table
     respond_to do |format|
-      if @table.save
+      if organization.tables.create(table_params)
         format.html { redirect_to @table, notice: 'Table was successfully created.' }
         format.json { render :show, status: :created, location: @table }
       else
@@ -45,8 +44,8 @@ class TablesController < ApplicationController
   # PATCH/PUT /tables/1.json
   def update
     @orders = orders
-    table = @orders[:tisch]
-    @orders.delete(:tisch)
+    table = Table.find(@orders[:table])
+    @orders.delete(:table)
     @drinks = []
     @food = []
     @orders.each do |o|
@@ -63,7 +62,7 @@ class TablesController < ApplicationController
         order.save
       end
     end
-    redirect_to Table.find(table), notice: 'Bestellung aufgenommen'
+    redirect_to table, notice: 'Bestellung aufgenommen'
   end
 
   # DELETE /tables/1
@@ -84,7 +83,7 @@ class TablesController < ApplicationController
       respond_to do |format|
         format.svg do
           render inline: RQRCode::QRCode.new(
-            'http://localhost:3000/tables/' + @table.id.to_s
+            "http://localhost:3000/tables/#{@table.id.to_s}/"
           ).as_svg
         end
       end

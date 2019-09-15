@@ -1,20 +1,3 @@
 <h1>Table Number:<%= @table.number %></h1>
-<% sum = 0 %>
-<ul class="list-group">
-<% @table.orders.each do |o| %>
-  <% unless o.paid %>
-  <li class="list-group-item form-check">
-    <%= check_box o.product.name, '', { "data-price" => o.product.preis, "data-id" => o.id}, class: "form-check-input" %> <strong><%= o.product.name %></strong> <%= o.product.preis%> <%= link_to 'Bezahlen', o, class: "btn btn-primary float-right pay"%>
-  </li>
-  <% sum = sum + o.product.preis %>
-  <% end %>
-<% end %>
-</ul>
-<hr/>
-<ul class="list-group">
-  <li class="list-group-item">
-    Summe: <span id="sum" data-sum="<%= sum %>"><%= sum %></span>
-  </li>
-</ul> <br/>
-<%= link_to 'Bestellen', edit_table_path(@table), class: "btn btn-primary form-control order" %>
+<%= link_to 'Bestellen', table_order_sessions_path(@table), class: "btn btn-primary form-control order" %>
 <button id="pay-group" class="btn btn-primary form-control" hidden="true">Bezahlen</button>

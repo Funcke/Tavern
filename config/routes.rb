@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get '/home', to: 'application#home', as: 'home'
 
   # tables resources
-  resources :tables
+  resources :tables do
+    resources :order_sessions
+  end
   post 'tables/:id/edit', to: 'tables#update', as: 'place_order'
   get 'tables/:id/qr', to: 'tables#generate_qr', as: 'generate_qr'
 

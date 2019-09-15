@@ -4,7 +4,7 @@
 # Represents a associatable location
 # in your organization
 class Table < ApplicationRecord
-  has_many :order_groups
+  has_many :order_sessions
   belongs_to :organization
 
   validates :number, presence: true
