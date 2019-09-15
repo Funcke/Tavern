@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 2019_08_31_102341) do
     t.index ["organization_id"], name: "index_dishes_on_organization_id"
   end
 
+  create_table "dishes_ingridients", id: false, force: :cascade do |t|
+    t.integer "ingridient_id", null: false
+    t.integer "dish_id", null: false
+    t.index ["dish_id", "ingridient_id"], name: "dish_ingridient"
+    t.index ["ingridient_id", "dish_id"], name: "ingridient_dish"
+  end
+
   create_table "drinks", force: :cascade do |t|
     t.decimal "price"
     t.string "name"

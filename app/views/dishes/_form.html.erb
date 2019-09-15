@@ -1,0 +1,19 @@
+<%= form_with(model: dish, local: true) do |form| %>
+    <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_area :description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= form.label :price %>
+        <%= form.number_field :price, value: number_to_currency(form.object.price.to_f, delimiter: '', unit: ''), step: :any %>
+    </div>
+    <div class="form-group">
+        <%= form.label :category %>
+        <%= form.select :category_id, organization.categories.collect { |category| [category.name, category.id]}, class: "form-control" %>
+    </div>
+    <%= form.submit 'Create', class: 'btn btn-success form-control' %>
+<% end %>

@@ -9,6 +9,7 @@ class Organization < ApplicationRecord
   has_many :order_sessions
   has_many :ingridients
   has_many :roles
+  has_many :categories
   
   validates :name, presence: true, uniqueness: true, length: {
     minimum: 4,

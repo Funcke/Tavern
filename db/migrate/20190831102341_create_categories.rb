@@ -7,5 +7,12 @@ class CreateCategories < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    create_join_table :ingridients, :dishes do |t|
+      t.index %i[ingridient_id dish_id], name: 'ingridient_dish'
+      t.index %i[dish_id ingridient_id], name: 'dish_ingridient'
+    end
+    add_foreign_key :ingridient_dish, :ingridient
+    add_foreign_key :ingridient_dish, :dish
   end
 end

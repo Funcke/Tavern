@@ -31,11 +31,16 @@ rights = Right.create({
   name: 'admin'
 })
 
+categories = Category.create({
+  name: 'noodles'
+})
+
 organizations.users << users
 organizations.ingridients << ingridients
 organizations.roles << roles
 organizations.tables << tables
 roles.users << users
+organizations.categories << categories
 puts users.errors.messages
 puts ingridients.each {|i| puts i.errors.messages}
 puts organizations.errors.messages
