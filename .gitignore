@@ -4,4 +4,3 @@ tmp/assets/
 .DS_Store
 *.sqlite3
 *.log
-Gemfile.lock

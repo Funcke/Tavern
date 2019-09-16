@@ -19,20 +19,6 @@ ActiveRecord::Schema.define(version: 2019_08_31_102341) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "allergenics_dish", id: false, force: :cascade do |t|
-    t.integer "dish_id", null: false
-    t.integer "allergenic_id", null: false
-    t.index ["allergenic_id", nil], name: "dish_allergene"
-    t.index [nil, "allergenic_id"], name: "allergene_dish"
-  end
-
-  create_table "allergenics_ingridients", id: false, force: :cascade do |t|
-    t.integer "ingridient_id", null: false
-    t.integer "allergenic_id", null: false
-    t.index ["allergenic_id", "ingridient_id"], name: "allergenic_ingridient"
-    t.index ["ingridient_id", "allergenic_id"], name: "ingridient_allergenic"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "organization_id"
@@ -51,13 +37,6 @@ ActiveRecord::Schema.define(version: 2019_08_31_102341) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_dishes_on_category_id"
     t.index ["organization_id"], name: "index_dishes_on_organization_id"
-  end
-
-  create_table "dishes_ingridients", id: false, force: :cascade do |t|
-    t.integer "ingridient_id", null: false
-    t.integer "dish_id", null: false
-    t.index ["dish_id", "ingridient_id"], name: "dish_ingridient"
-    t.index ["ingridient_id", "dish_id"], name: "ingridient_dish"
   end
 
   create_table "drinks", force: :cascade do |t|
@@ -172,4 +151,24 @@ ActiveRecord::Schema.define(version: 2019_08_31_102341) do
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
+  create_table "allergenics_dish", id: false, force: :cascade do |t|
+    t.integer "dish_id", null: false
+    t.integer "allergenic_id", null: false
+    t.index ["allergenic_id", nil], name: "dish_allergene"
+    t.index [nil, "allergenic_id"], name: "allergene_dish"
+  end
+
+  create_table "allergenics_ingridients", id: false, force: :cascade do |t|
+    t.integer "ingridient_id", null: false
+    t.integer "allergenic_id", null: false
+    t.index ["allergenic_id", "ingridient_id"], name: "allergenic_ingridient"
+    t.index ["ingridient_id", "allergenic_id"], name: "ingridient_allergenic"
+  end
+
+  create_table "dishes_ingridients", id: false, force: :cascade do |t|
+    t.integer "ingridient_id", null: false
+    t.integer "dish_id", null: false
+    t.index ["dish_id", "ingridient_id"], name: "dish_ingridient"
+    t.index ["ingridient_id", "dish_id"], name: "ingridient_dish"
+  end
 end
