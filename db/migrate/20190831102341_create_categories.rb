@@ -12,7 +12,7 @@ class CreateCategories < ActiveRecord::Migration[5.2]
       t.index %i[ingridient_id dish_id], name: 'ingridient_dish'
       t.index %i[dish_id ingridient_id], name: 'dish_ingridient'
     end
-    add_foreign_key :ingridient_dish, :ingridient
-    add_foreign_key :ingridient_dish, :dish
+    add_foreign_key :dishes_ingridients, :ingridients
+    add_foreign_key :dishes_ingridients, :dishes
   end
 end

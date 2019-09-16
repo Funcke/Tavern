@@ -4,11 +4,11 @@
 class CreateJoinTableProductAllergenic < ActiveRecord::Migration[5.2]
   def change
     create_join_table :dish, :allergenics do |t|
-      t.index %i[product_id allergenic_id], name: 'allergene_dish'
-      t.index %i[allergenic_id product_id], name: 'dish_allergene'
+      t.index %i[dish_id allergenic_id], name: 'allergene_dish'
+      t.index %i[allergenic_id dish_id], name: 'dish_allergene'
     end
 
-    add_foreign_key :dish_allergenic, :products
-    add_foreign_key :dish_allergenic, :allergenics
+    add_foreign_key :allergenics_dish, :dishes
+    add_foreign_key :allergenics_dish, :allergenics
   end
 end

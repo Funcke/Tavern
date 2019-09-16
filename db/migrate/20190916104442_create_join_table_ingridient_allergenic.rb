@@ -7,7 +7,7 @@ class CreateJoinTableIngridientAllergenic < ActiveRecord::Migration[5.2]
       t.index %i[ingridient_id allergenic_id], name: 'ingridient_allergenic'
       t.index %i[allergenic_id ingridient_id], name: 'allergenic_ingridient'
     end
-    add_foreign_key :ingridient_allergenic, :ingridient
-    add_foreign_key :ingridient_allergenic, :allergenic
+    add_foreign_key :allergenics_ingridients, :ingridients
+    add_foreign_key :allergenics_ingridients, :allergenics
   end
 end
