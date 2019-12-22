@@ -1,0 +1,6 @@
+<h3>Open Positions</h3>
+<ul class="list-group">
+<% orders.each do |o| %>
+    <li class="list-group-item"><%= (o.dish.nil?) ? (o.drink.name + o.drink.quantity) : o.dish.name %> - <%= (o.dish.nil?) ? o.drink.price : o.dish.price %></li>
+<% end %>
+</ul>

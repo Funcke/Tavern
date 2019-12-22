@@ -13,7 +13,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
 
       t.belongs_to :organization
       t.belongs_to :role
-      
+
       t.timestamps
     end
   end

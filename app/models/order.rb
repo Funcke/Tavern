@@ -5,6 +5,6 @@
 class Order < ApplicationRecord
   belongs_to :organization
   belongs_to :order_session
-  belongs_to :drink
-  belongs_to :dish
+  belongs_to :drink, optional: true
+  belongs_to :dish, optional: true
 end

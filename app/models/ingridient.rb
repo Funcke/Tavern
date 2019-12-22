@@ -18,5 +18,4 @@ class Ingridient < ApplicationRecord
     minimum: 20,
     maximum: 240
   }
-
 end

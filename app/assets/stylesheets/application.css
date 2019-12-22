@@ -21,3 +21,9 @@
      height: 28pt;
      width: 28pt
  }
+
+ .parcel {
+     height: 50vh;
+     width: 78vw;
+     padding-top: 5vh;
+ }

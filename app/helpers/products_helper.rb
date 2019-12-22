@@ -2,7 +2,7 @@
 
 # Helper module for products
 module ProductsHelper
-    def ingridients
-        Ingridient.all
-    end
+  def ingridients
+    Ingridient.all
+  end
 end

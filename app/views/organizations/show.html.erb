@@ -31,17 +31,16 @@
     </div>
     <div class="col">
         <div class="card">
-            <div class="card-body" style="overflow: scroll">
+            <div class="card-body">
                 <h2 class="card-title">Products</h2>
-                <ul class="list-group card-text">
+                <ul class="list-group card-text" style="overflow: scroll">
                     <% @organization.drinks.each do |p|%>
-                        <li class="list-group-item"><strong><%= p.name%></strong> <%= p.preis %><span class="badge badge-pill badge-danger">Drink</span></li>
+                        <li class="list-group-item"><span class="badge badge-pill badge-danger">Drink</span><strong><%= p.name%></strong> <%= p.price %></li>
                     <% end %>
                     <% @organization.dishes.each do |p| %>
-                        <li class="list-group-item">D<strong><%= p.name%></strong> <%= p.preis %><span class="badge badge-pill badge-warning">Food</span></li>
+                        <li class="list-group-item"><span class="badge badge-pill badge-warning">Food</span><strong><%= p.name%></strong> <%= p.price %></li>
                     <% end %>
                 </ul>
-                <% if admin? %><%= link_to 'New Product',  new_product_url, class: "btn btn-primary card-link" %><% end %>
             </div>
         </div>
     </div>

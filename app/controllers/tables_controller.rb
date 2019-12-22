@@ -13,7 +13,10 @@ class TablesController < ApplicationController
 
   # GET /tables/1
   # GET /tables/1.json
-  def show; end
+  def show
+    @session = @table.order_sessions.select { |s| s.open?}.first
+    puts @session.to_json
+  end
 
   # GET /tables/new
   def new
@@ -83,7 +86,7 @@ class TablesController < ApplicationController
       respond_to do |format|
         format.svg do
           render inline: RQRCode::QRCode.new(
-            "http://localhost:3000/tables/#{@table.id.to_s}/"
+            "http://localhost:3000/tables/#{@table.id}/"
           ).as_svg
         end
       end

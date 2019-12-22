@@ -2,11 +2,12 @@
 <hr/>
 <p><b>Price:</b> <%= @dish.price %></p>
 <p><b>Category:</b> <%= @dish.category.name %></p>
-<p><b>Ingridients:</b> </p>
-<ul class="list-group card-text">
+<p><b>Ingridients:</b>
+<ul class="list-group">
     <% @dish.ingridients.each do |i| %>
         <li class="list-group-item"><%= i.name %></li>
     <% end %>
 </ul>
+</p>
 <p><b>About</b></p>
 <p><%= @dish.description %></p>

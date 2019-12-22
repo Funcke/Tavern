@@ -15,5 +15,16 @@
         <%= form.label :category %>
         <%= form.select :category_id, organization.categories.collect { |category| [category.name, category.id]}, class: "form-control" %>
     </div>
+    <ul class="list-group form-group">
+    <% organization.ingridients.each do |i|%>
+        <li class="list-group-item">
+            <div class="form-check">
+                <%= check_box :dish, :ingridients, {multiple: true, class: "form-check-input"}, i.id, nil %>
+                <label class="form-check-label" for="defaultCheck1"><%= i.name %></label>
+            </div>
+        </li>
+    <% end %>
+    </ul>
+    <hr/>
     <%= form.submit 'Create', class: 'btn btn-success form-control' %>
 <% end %>

@@ -7,9 +7,9 @@ module OrganizationsHelper
   end
 
   def check_authorization
-    if !admin?
+    unless admin?
       redirect_to current_user,
-        notice: 'This action is only for the administrator of your organization'
+                  notice: 'This action is only for the administrator of your organization'
     end
   end
 

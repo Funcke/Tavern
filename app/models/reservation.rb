@@ -1,7 +1,9 @@
-class Reservation < ApplicationRecord
-    belongs_to :organization
-    belongs_to :table
+# frozen_string_literal: true
 
-    validates :date, presence: true
-    validates :cancelles, presence: true
+class Reservation < ApplicationRecord
+  belongs_to :organization
+  belongs_to :table
+
+  validates :date, presence: true
+  validates :cancelles, presence: true
 end

@@ -12,11 +12,11 @@ class UsersController < ApplicationController
   ##
   # check if current user has admin role or else redirect
   before_action :check_authorization, only: %i[index new create destroy]
-  
+
   ##
   # GET /users
   # Index displays a list of all users that belong to the
-  # organization of the current user. 
+  # organization of the current user.
   #
   # Access: Admin
   def index
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   ##
   # GET /users/new
   # Returns a view for creating a new User.
-  # 
+  #
   # Access: Admin
   def new
     @user = User.new
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   # GET /users/:id/edit
   # Return a edit view for the user provided by the
   # :id path parameter.
-  # 
+  #
   # path: :id
   # Access: Registered User
   def edit; end
@@ -109,7 +109,7 @@ class UsersController < ApplicationController
       end
       format.json { head :no_content }
     end
-  end 
+  end
 
   private
 

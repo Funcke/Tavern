@@ -7,7 +7,7 @@ class CreateTables < ActiveRecord::Migration[5.2]
       t.integer :number
       t.integer :seats
       t.string :description
-      
+
       t.belongs_to :organization
       t.timestamps
     end

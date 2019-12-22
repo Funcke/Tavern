@@ -16,7 +16,7 @@ class User < ApplicationRecord
     maximum: 70
   }
   validates :firstname, presence: true, length: {
-    minimum: 3, 
+    minimum: 3,
     maximum: 50
   }
   validates :lastname, presence: true, length: {

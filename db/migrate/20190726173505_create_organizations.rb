@@ -15,7 +15,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.string :logo
       t.string :homepage
       t.string :currency
-      
+
       t.timestamps
     end
   end

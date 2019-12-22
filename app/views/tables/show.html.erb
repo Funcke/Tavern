@@ -1,3 +1,4 @@
 <h1>Table Number:<%= @table.number %></h1>
 <%= link_to 'Bestellen', table_order_sessions_path(@table), class: "btn btn-primary form-control order" %>
+<%= render 'pay_list', orders: @session.orders %>
 <button id="pay-group" class="btn btn-primary form-control" hidden="true">Bezahlen</button>

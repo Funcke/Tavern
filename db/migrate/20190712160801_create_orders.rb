@@ -7,9 +7,9 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.boolean :paid
       t.belongs_to :dish
       t.belongs_to :drink
-      t.belongs_to :order_sessions
+      t.belongs_to :order_session
       t.belongs_to :organization
-      
+
       t.timestamps
     end
   end

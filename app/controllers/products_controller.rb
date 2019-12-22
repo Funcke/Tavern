@@ -12,9 +12,7 @@ class ProductsController < ApplicationController
   def create
     product = Product.new(permit_product)
     params[:product][:ingridients].each do |name, value|
-      if value == 1
-        product.ingridients << Ingridient.where(:name => name).first
-      end
+      product.ingridients << Ingridient.where(name: name).first if value == 1
     end
     organization.products << product
     if product.save

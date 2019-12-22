@@ -4,7 +4,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
   let(:user) do
-    
   end
 
   it 'is valid' do
