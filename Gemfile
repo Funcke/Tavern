@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'rqrcode', '~> 0.10.1'
+
+# use sidekiq for print jobs
+gem 'sidekiq'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

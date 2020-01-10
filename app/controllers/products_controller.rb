@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update delete]
   before_action :set_ingredients, only: %i[new show edit]
 
+  def index
+    @products = Product.all
+  end
+
   def show; end
 
   def create

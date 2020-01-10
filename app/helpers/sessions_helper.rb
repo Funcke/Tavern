@@ -7,7 +7,15 @@ module SessionsHelper
   end
 
   def authenticated?
-    current_user.nil?
+    state = current_user.nil?
+    if state
+      session.delete(:user_id)
+    end
+    state
+  end
+
+  def admin?
+    current_user.role.name == 'admin'
   end
 
   # rubocop:disable Style/GuardClause

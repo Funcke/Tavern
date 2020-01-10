@@ -16,6 +16,9 @@ class TablesController < ApplicationController
   def show
     @session = @table.order_sessions.select { |s| s.open?}.first
     puts @session.to_json
+    if @session.nil?
+      redirect_to new_table_order_session_url(@table)
+    end
   end
 
   # GET /tables/new

@@ -82,6 +82,11 @@ ActiveRecord::Schema.define(version: 2019_09_16_104732) do
     t.index ["organization_id"], name: "index_ingridients_on_organization_id"
   end
 
+  create_table "menu_items", force: :cascade do |t|
+    t.integer "menu_id", null: false
+    t.integer "product_id", null: false
+  end
+
   create_table "order_sessions", force: :cascade do |t|
     t.integer "organization_id"
     t.integer "table_id"
@@ -120,6 +125,21 @@ ActiveRecord::Schema.define(version: 2019_09_16_104732) do
     t.string "currency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.decimal "price"
+    t.string "name"
+    t.string "description"
+    t.string "type"
+    t.integer "quantity"
+    t.string "quantity_type"
+    t.integer "organization_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["organization_id"], name: "index_products_on_organization_id"
   end
 
   create_table "reservations", force: :cascade do |t|

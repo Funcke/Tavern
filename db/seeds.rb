@@ -40,7 +40,8 @@ dishes = Dish.create(
   price: 1.25,
   name: "fucking noodles",
   description: "My noodles are good. If you no like them, fuck you",
-  ingridients: ingridients
+  ingridients: ingridients,
+  category: categories
 )
 organizations.users << users
 organizations.ingridients << ingridients
