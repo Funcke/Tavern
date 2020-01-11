@@ -46,4 +46,12 @@ class Organization < ApplicationRecord
   }
   validates :homepage, uniqueness: true
   validates :currency, presence: true
+
+  def category_names
+    names = []
+    categories.each do |c|
+      names << c.name
+    end
+    names
+  end
 end

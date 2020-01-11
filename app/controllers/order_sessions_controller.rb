@@ -23,7 +23,7 @@ class OrderSessionsController < ApplicationController
   def create
     puts params.to_json
     session = OrderSession.new(table: table, organization: organization, open: true)
-    puts session
+    create_orders
     if session.save
       redirect_to edit_table_order_session_path(session.table.id, session.id)
     else

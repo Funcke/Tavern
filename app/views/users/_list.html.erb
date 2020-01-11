@@ -1,7 +1,5 @@
 <ul class="list-group card-text">
-    <li class="list-group-item list-group-item-active active"><h3>Users</h3></li>
     <% users.each do |u| %>
         <li class="list-group-item"><%= link_to u.username, u %></li>
     <% end %>
 </ul>
-<% if admin? %><%= link_to 'New User', new_user_url, class: "btn btn-primary card-link" %><% end %>

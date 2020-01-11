@@ -1,5 +1,5 @@
 <h1>All User of <%= current_user.organization.name %></h1>
 
 <%= render 'list', users: @users %>
-
+<% if admin? %><%= link_to 'New User', new_user_url, class: "btn btn-primary card-link" %><% end %>
 <%= link_to 'Back', :back %>

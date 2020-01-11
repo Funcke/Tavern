@@ -1,7 +1,5 @@
 <ul class="list-group card-text">
-    <li class="list-group-item list-group-item-active active"><h3>Tables</h3></li>
     <% tables.each do |t| %>
         <li class="list-group-item"><%= link_to t.number, t %></li>
     <% end %>
 </ul>
-<% if admin? %><%= link_to 'New Table', new_table_url, class: "btn btn-primary card-link" %><% end %>

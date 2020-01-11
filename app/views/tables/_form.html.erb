@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :number %>
-    <%= form.number_field :number %>
+    <%= form.number_field :number, class: 'form-control', min: 0 %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit 'Tisch erstellen', class: 'form-control btn btn-success' %>
   </div>
 <% end %>

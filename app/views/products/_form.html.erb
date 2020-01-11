@@ -1,0 +1,42 @@
+<%= form_with(model: product, local: true) do |f| %>
+<div class="form-group">
+    <%= f.label :name%>
+    <%= f.text_field :name, class: 'form-control'%>
+</div>
+<div class="form-group">
+    <%= f.label :price%>
+    <%= f.number_field :price, value: number_to_currency(f.object.price.to_f, delimiter: '', unit: ''), step: :any, min: 0, class: 'form-control'%>
+</div>
+<div class="form-group">
+    <%= f.label :category %>
+    <%= f.select :category, organization.category_names %>
+</div>
+<div class="form-group">
+    <%= f.label :description%>
+    <%= f.text_area :description, class: 'form-control'%>
+</div>
+<div class="form-group">
+    <%= f.label :type %>
+    <%= f.select :type, ['dish', 'drink', 'menu'], class: 'form-control' %>
+</div>
+<div class="form-group">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, min: 0, class: 'form-control'%>
+</div>
+<div class="form-group">
+    <%= f.label :ingredients%>
+    <ul class="list-group" style="overflow: scroll; height: 30vh">
+        <% organization.ingridients.each do |i|%>
+            <li class="list-group-item">
+                <div class="form-check">
+                    <%= check_box :product, :ingridients, {multiple: true, class: "form-check-input"}, i.id, nil %>
+                    <label class="form-check-label" for="defaultCheck1"><%= i.name %></label>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</div>
+<div class="form-group">
+    <%= f.submit 'Erstellen', class: 'form-control btn btn-success'%>
+</div>
+<% end %>
