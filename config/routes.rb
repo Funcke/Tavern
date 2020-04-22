@@ -23,8 +23,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
 
   # orders resources
-  get 'order/:id', to: 'orders#pay', as: 'order'
-  post 'orders', to: 'orders#pay_group', as: 'orders'
+  delete 'order/:id', to: 'orders#pay', as: 'order'
+  delete 'orders', to: 'orders#pay_group', as: 'orders'
 
   # organizations resources
   resources :organizations, only: %i[show edit update destroy]

@@ -1,6 +1,24 @@
 <h3>Open Positions</h3>
+<%= %>
 <ul class="list-group">
 <% orders.each do |o| %>
-    <li class="list-group-item"><%= (o.dish.nil?) ? (o.drink.name + o.drink.quantity) : o.dish.name %> - <%= (o.dish.nil?) ? o.drink.price : o.dish.price %></li>
+    <% if not o.paid? %>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col col-sm-8">
+            <%= (o.dish.nil?) ? (o.drink.name + o.drink.quantity) : o.dish.name %> - <%= (o.dish.nil?) ? o.drink.price : o.dish.price %>
+            </div>
+            <div class="col col-sm-4">
+                <%=%>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col col-sm-12">
+            <%= link_to 'pay', '/order/' + o.id.to_s, class:"btn btn-warning", style: 'float: right; width: 100%', method: 'delete'%>
+            </div>
+        </div>
+    </li>
+    <% end %>
 <% end %>
 </ul>
